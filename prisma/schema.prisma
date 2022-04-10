@@ -341,3 +341,25 @@ model Test {
   test1 String  @unique
   test2 String?
 }
+///////////////////////////////////////////////////////////////////////
+// Request for access
+///////////////////////////////////////////////////////////////////////
+
+
+//Requesting for access to a specific permission
+model Requested {
+  RequestId Int @id @default(autoincrement())
+  StudId String @default(cuid())
+  CompId String  @default(cuid())
+  ItemId Item
+  Accepted Boolean
+}
+
+//Item to request for access
+enum Item {
+  ACADEMIC_RECORD
+  CV
+  TRANSCRIPT
+  CERTFICATE
+  CAPSTONE_PROJECT
+}
